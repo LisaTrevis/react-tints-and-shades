@@ -6,11 +6,19 @@ import Values from "values.js";
 function App() {
   const [color, setColor] = useState("");
   const [list, setList] = useState([]);
+  const [error, setError] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    let colors = new Values(color).all(8);
-    setList(colors);
+
+    try {
+      let colors = new Values(color).all(8);
+      setList(colors);
+      setError(false);
+    } catch (error) {
+      setError(true);
+      console.log("error");
+    }
   };
 
   return (
@@ -21,14 +29,15 @@ function App() {
           <label htmlFor="chooseColor">Choose a color:</label>
           <input
             id="chooseColor"
-            className="input-color"
             type="color"
             value={color}
             onChange={(e) => setColor(e.target.value)}
+            className={`${error ? "error" : null}`}
           />
           <button className="btn" type="submit">
             Submit
           </button>
+          {error ? <p>Please select a color</p> : null}
         </form>
       </section>
       <section className="colors">
