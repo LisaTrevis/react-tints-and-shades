@@ -32,7 +32,7 @@ function App() {
             type="color"
             value={color}
             onChange={(e) => setColor(e.target.value)}
-            className={`${error ? "error" : null}`}
+            // className={`${error ? "error" : null}`}
           />
           <button className="btn" type="submit">
             Submit
