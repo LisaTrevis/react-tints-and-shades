@@ -4,8 +4,8 @@ import Color from "./Color";
 import Values from "values.js";
 
 function App() {
-  const [color, setColor] = useState("");
-  const [list, setList] = useState([]);
+  const [color, setColor] = useState("#42a1b3");
+  const [list, setList] = useState(new Values(color).all(8));
   const [error, setError] = useState(false);
 
   const handleSubmit = (e) => {

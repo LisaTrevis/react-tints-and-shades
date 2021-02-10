@@ -141,6 +141,11 @@ Tints & Shades
   margin: 10px;
 }
 
+.form label {
+  font-size: 20px;
+  font-weight: bold;
+}
+
 .colors {
   min-height: calc(100vh - 100px);
   display: grid;
@@ -159,7 +164,7 @@ Tints & Shades
 }
 
 .btn {
-  padding: 0.5rem;
+  padding: 0.4rem;
   font-size: 1rem;
   background: var(--clr-btn);
   border-color: transparent;
